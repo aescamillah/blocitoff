@@ -2,8 +2,12 @@
   <div class="col-md-8">
     <div class="media">
       <div class="media-body">
-        <h2 class="media-heading"><%= @user.name %></h2>
+        <h1 class="media-heading"><%= @user.name %></h1>
+        <%= render partial: 'items/form', locals: { item: Item.new, user: @user } %>
       </div>
     </div>
   </div>
 </div>
+
+<h2>To-do list</h2>
+<%= render partial: 'items/item', collection: @items %>

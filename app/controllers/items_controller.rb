@@ -22,6 +22,27 @@ class ItemsController < ApplicationController
     # end
   end
 
+  def destroy
+    @user = current_user
+    # @user = Item.find(params[:user_id])
+    @item = @user.items.find(params[:id])
+
+    #  authorize @item
+     if @item.destroy
+       flash[:notice] = "Item was removed."
+      #  redirect_to @user
+     else
+       flash[:error] = "Item couldn't be deleted. Try again."
+      #  redirect_to @user
+     end
+
+     respond_to do |format|
+       format.html
+       format.js
+     end
+
+   end
+
   private
 
   def item_params

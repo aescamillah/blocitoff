@@ -1,3 +1,5 @@
-<div class="media">
-  <h4 class="media-body"><%= item.name %></h4>
-</div>
+<tr>
+  <td><%= item.name %></td>
+  <td><%= item.days_left %></td>
+  <td><%= link_to "", [item.user, item], method: :delete, class: 'glyphicon glyphicon-trash', remote: true %></td>
+</tr>

@@ -32,6 +32,7 @@ users = User.all
     user:   users.sample,
     name:  Faker::Lorem.sentence,
   )
+  item.update_attributes!(created_at: rand(10.minutes .. 7.days).ago)
 end
 
 items = Item.all

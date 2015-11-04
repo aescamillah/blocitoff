@@ -9,5 +9,18 @@
   </div>
 </div>
 
-<h2>To-do list</h2>
-<%= render partial: 'items/item', collection: @items %>
+<h2><p class="text-center">To-do List</p></h2>
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Task</th>
+        <th>Days Left</th>
+        <th>Completed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: 'items/item', collection: @items %>
+    </tbody>
+  </table>
+</div>
